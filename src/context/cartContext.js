@@ -20,9 +20,6 @@ const CartPorvider = ({children}) => {
             }
     };
     
-    console.log('carrito: ', cart)
-
-    
     // Esta en el carrito el producto?
     const estaEnCarrito = (id) => cart.find(producto => producto.id === id) ? true : false;   // nos busca el id y nos da verdadero o falso dependiendo si esta o no
 

@@ -14,16 +14,12 @@ const ItemListContainer = () => {
     
     useEffect(() => {
         const db = getFirestore();
-        const items = collection(db, 'productos');
-
-        let itemQuery = {}
+        let itemQuery = collection(db, 'productos');
 
         if (idCategory !== undefined) {
-            itemQuery = query(items, where("marca","==", idCategory))
-        }else{
-            itemQuery = items
+            itemQuery = query(itemQuery, where("marca","==", idCategory))
         }
-
+        
         getDocs(itemQuery).then((snapshot)=> {
             const docs = snapshot.docs.map((doc) => ({
                 id: doc.id,

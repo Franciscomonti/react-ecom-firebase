@@ -19,7 +19,6 @@ const ItemDetailContainer = () => {
             const producto = {id: snapshot.id, ...snapshot.data()};
 
                 setItem(producto)
-                
                 setLoadSpin(true)
             })
         
